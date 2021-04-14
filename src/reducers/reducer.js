@@ -87,7 +87,7 @@ const initialState = {
       
       case CREATE_USER:
         return {
-         
+         ...state,
           users: [ ...state.users ,action.payload  ] 
         }
      
