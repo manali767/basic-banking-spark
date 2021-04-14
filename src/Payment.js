@@ -36,13 +36,14 @@ const Payment = () => {
         }, [id, users])
         console.log(listreceiver);
         useEffect(() => {
-            const selectedReceiver = users &&  users.find(prod => prod.id === Number(receiver));    
+            const selectedReceiver = users &&  users.find(prod => prod.id == receiver);    
             setSelectedreceiver(selectedReceiver);
             // setSelectedreceiver({...selectedreceiver , balance : Number(count) + selectedReceiver.balance});
         }, [receiver , users]);
 
         
-         console.log(selecteduser);
+        //  console.log(selecteduser);
+         console.log(selectedreceiver);
 
         function handleBalance(e) {
             setCount(e.target.value);
@@ -51,19 +52,19 @@ const Payment = () => {
           }
         
           const handleSubmit = (e) =>{
-            // if(Number(count)===0)
-            // {
-            //     alert("Oops!Zero value cannot be transfered");
-            // }
-            // else if(Number(count)<0)
-            // {
-            //     alert("Oops!Negative value cannot be transfered");
-            // }
-            // else if(Number(selecteduser?.balance) < Number(count))
-            // {
-            //     alert("Oops!current balance is very low")
-            // }
-            // else{
+            if(Number(count)===0)
+            {
+                alert("Oops!Zero value cannot be transfered");
+            }
+            else if(Number(count)<0)
+            {
+                alert("Oops!Negative value cannot be transfered");
+            }
+            else if(Number(selecteduser?.balance) < Number(count))
+            {
+                alert("Oops!current balance is very low")
+            }
+            else{
             const receiver = {
                 id: selectedreceiver?.id,
                 name:selectedreceiver?.name,
@@ -92,6 +93,7 @@ const Payment = () => {
              alert("Successful Transaction!");
              history.push("/Customer");
           }
+        }
 
          
 
