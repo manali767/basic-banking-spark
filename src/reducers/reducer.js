@@ -5,7 +5,7 @@ import { CREATE_USER , ADD_TO_TRANSFER , HISTORY_ADD} from "../types";
 const initialState = {
   users:  [
     {
-      "id": Number(1),
+      "id": 1,
       "name": "Leanne Graham",
       "username": "Bret",
       "email": "Sincere@april.biz",
@@ -88,7 +88,7 @@ const initialState = {
       case CREATE_USER:
         return {
          
-          users: [action.payload , ...state.users ] 
+          users: [ ...state.users ,action.payload  ] 
         }
      
 
@@ -102,7 +102,9 @@ const initialState = {
         return{
           
           ...state,
-          history: [action.payload ]
+          
+          history: [action.payload ],
+          ...state.history,
         }
         
        default: 

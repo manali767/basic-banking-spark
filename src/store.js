@@ -1,34 +1,31 @@
 import { createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import rootReducer from './reducers';
-// function saveToLocalStorage(state) {
-//   try {
-//     const serialisedState = JSON.stringify(state);
-//     localStorage.setItem("persistantState", serialisedState);
-//   } catch (e) {
-//     console.warn(e);
-//   }
-// }
-
-// // load string from localStarage and convert into an Object
-// // invalid output must be undefined
-// function loadFromLocalStorage() {
-//   try {
-//     const serialisedState = localStorage.getItem("persistantState");
-//     if (serialisedState === null) return undefined;
-//     return JSON.parse(serialisedState);
-//   } catch (e) {
-//     console.warn(e);
-//     return undefined;
-//   }
-// }
-
+export const loadState = () => {
+  try {
+    const serializedState = localStorage.getItem('state');
+    if (serializedState === null) {
+      return undefined;
+    }
+    return JSON.parse(serializedState);
+  } catch (err) {
+    return undefined;
+  }
+}; 
+export const saveState = (state) => {
+  try {
+    const serializedState = JSON.stringify(state);
+    localStorage.setItem('state', serializedState);
+  } catch {
+    // ignore write errors
+  }
+};
 // create our store from our rootReducers and use loadFromLocalStorage
 // to overwrite any values that we already have saved
-const store = createStore(rootReducer, composeWithDevTools() );
+const store = createStore(rootReducer, loadState()  );
 
 // listen for store changes and use saveToLocalStorage to
 // save them to localStorage
-// store.subscribe(() => saveToLocalStorage(store.getState()));
+store.subscribe(() => saveState(store.getState()));
 
 export default store;

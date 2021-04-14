@@ -30,8 +30,8 @@ return (
           
                 {
                    users && users.map((product, index) => (
-                    <tr>
-                      <th scope="row" key={product.id}>{index + 1}</th>
+                    <tr >
+                      <th scope="row"  key={product.id}>{index + 1}</th>
                       <td>{product.name}</td>
                       <td>{product.username}</td>
                       <td>{product.email}</td>

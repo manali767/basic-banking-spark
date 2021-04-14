@@ -3,7 +3,7 @@ import { useSelector} from "react-redux";
 
 function Transfer() {
 
-    const users = useSelector(state => state.user.history);
+  const users = useSelector(state => state.user.history);
    console.log(users);
     return (
         <div className="container">
@@ -21,7 +21,7 @@ function Transfer() {
       <tbody>
       
             {
-               users && users.map((product) => (
+              users && users.map((product) => (
                 <tr>
                   <td>{product.sender}</td>
                   <td>{product.receiver}</td>

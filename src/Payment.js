@@ -42,7 +42,7 @@ const Payment = () => {
         }, [receiver , users]);
 
         
-         
+         console.log(selecteduser);
 
         function handleBalance(e) {
             setCount(e.target.value);
