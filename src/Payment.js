@@ -36,7 +36,7 @@ const Payment = () => {
         }, [id, users])
         console.log(listreceiver);
         useEffect(() => {
-            const selectedReceiver = users &&  users.find(prod => prod.id === receiver);    
+            const selectedReceiver = users &&  users.find(prod => prod.id === Number(receiver));    
             setSelectedreceiver(selectedReceiver);
             // setSelectedreceiver({...selectedreceiver , balance : Number(count) + selectedReceiver.balance});
         }, [receiver , users]);
