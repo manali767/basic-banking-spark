@@ -103,8 +103,8 @@ const initialState = {
           
           ...state,
           
-          history: [action.payload ],
-          ...state.history,
+          history: [action.payload , ...state.history, ],
+          
         }
         
        default: 
