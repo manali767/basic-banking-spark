@@ -1,0 +1,3 @@
+export const CREATE_USER = "CREATE_USER";
+export const ADD_TO_TRANSFER="ADD_TO_TRANSFER";
+export const HISTORY_ADD = "HISTORY_ADD";
