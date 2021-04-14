@@ -11,7 +11,7 @@ function navbar() {
                     <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div className="navbar-nav ml-auto">
+                    <div className="navbar-nav ">
                         {/* <Link className="nav-link " to="/">Home <span class="sr-only">(current)</span></Link> */}
                         <Link className="nav-link" to="/Customer">Customers</Link>
                           <Link className="nav-link" to="/Transfer">Transfer</Link>
