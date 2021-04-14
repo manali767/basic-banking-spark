@@ -102,7 +102,7 @@ const initialState = {
         return{
           
           ...state,
-          history: [action.payload , ...state.history]
+          history: [action.payload ]
         }
         
        default: 
