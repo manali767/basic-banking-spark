@@ -39,9 +39,9 @@ function App() {
               <Payment />
             </Route>
 
-            <Route path="/users/add">
+            {/* <Route path="/users/add">
               <Add />
-            </Route>
+            </Route> */}
           
           </Switch>
          
