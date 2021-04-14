@@ -63,7 +63,7 @@ const Payment = () => {
             {
                 alert("Oops!current balance is very low")
             }
-            else{
+            else if(Number(selecteduser?.balance) < Number(count)){
             const receiver = {
                 id: selectedreceiver?.id,
                 name:selectedreceiver?.name,
