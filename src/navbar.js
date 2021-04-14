@@ -17,7 +17,7 @@ function navbar() {
                     </div>
                 </div>
                 </div>
-                {/* <Link className="btn btn-outline-light mr-2" to="/users/add">Add a User</Link> */}
+                <Link className="btn btn-outline-light mr-2" to="/users/add">Add a User</Link>
             </nav>
         </div>
     )
