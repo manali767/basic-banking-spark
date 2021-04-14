@@ -51,19 +51,19 @@ const Payment = () => {
           }
         
           const handleSubmit = (e) =>{
-            if(Number(count)===0)
-            {
-                alert("Oops!Zero value cannot be transfered");
-            }
-            else if(Number(count)<0)
-            {
-                alert("Oops!Negative value cannot be transfered");
-            }
-            else if(Number(selecteduser?.balance) < Number(count))
-            {
-                alert("Oops!current balance is very low")
-            }
-            else if(Number(selecteduser?.balance) > Number(count)){
+            // if(Number(count)===0)
+            // {
+            //     alert("Oops!Zero value cannot be transfered");
+            // }
+            // else if(Number(count)<0)
+            // {
+            //     alert("Oops!Negative value cannot be transfered");
+            // }
+            // else if(Number(selecteduser?.balance) < Number(count))
+            // {
+            //     alert("Oops!current balance is very low")
+            // }
+            // else{
             const receiver = {
                 id: selectedreceiver?.id,
                 name:selectedreceiver?.name,
@@ -91,7 +91,7 @@ const Payment = () => {
              dispatch(historyadd(historydetails));
              alert("Successful Transaction!");
              history.push("/Customer");
-          }}
+          }
 
          
 
