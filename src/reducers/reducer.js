@@ -101,8 +101,8 @@ const initialState = {
       case HISTORY_ADD:
         return{
           
-         
-          history: [action.payload ,  ...state.history ]
+          ...state,
+          history: [action.payload ]
         }
         
        default: 
