@@ -21,13 +21,14 @@ function App() {
     <Provider store={store}>
       <Router>
         <div className="App">
-         
+        
       
           <Navbar />
           
           <Switch>
             <Route exact path="/">
               <Home />
+            
             </Route>
             <Route path="/Customer">
               <Customer />
